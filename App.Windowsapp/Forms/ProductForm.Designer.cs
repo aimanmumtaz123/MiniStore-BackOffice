@@ -249,6 +249,7 @@ namespace App.Windowsapp.Forms
             btnSave.Text = "Save";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // ProductForm
             // 
@@ -293,6 +294,6 @@ namespace App.Windowsapp.Forms
         private NumericUpDown nuPrice;
         private NumericUpDown nuStock;
         private TextBox txtName;
-        private TextBox txtId;
+        public TextBox txtId;
     }
 }

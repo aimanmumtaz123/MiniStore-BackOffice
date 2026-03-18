@@ -18,13 +18,31 @@ namespace App.Core.Services
             GenerateFakeProducts();
         }
 
-        public void Add(Product product)
+        public Product Add(Product product)
         {
-            throw new NotImplementedException();
+            if (product != null)
+            {
 
+                product.Id = GenerateId();
+                _products.Add(product);
+            }
+            return product;
         }
         public bool Update(Product product)
         {
+            if (product != null)
+            {
+                Product? existing = _products.Find(p=> p.Id == product.Id);
+                if (existing == null) return false;
+                
+                existing.Name = product.Name;
+                existing.Category = product.Category;
+                existing.Price = product.Price;
+                existing.Status = product.Status;
+                existing.Stock = product.Stock;
+
+                return true;
+            }
             return false;
         }
         public bool Delete(String id)
@@ -33,7 +51,8 @@ namespace App.Core.Services
         }
         public Product GetById(String id)
         {
-            throw new NotImplementedException();
+            Product? prod = _products.Find(p => p.Id == id);
+            return prod;
 
         }
         public List<Product> GetAll()
@@ -77,6 +96,8 @@ namespace App.Core.Services
             // e.g., P-1A2B3C
             return "P-" + Guid.NewGuid().ToString("N").Substring(0, 6);
         }
+         
+        
 
     }
 }

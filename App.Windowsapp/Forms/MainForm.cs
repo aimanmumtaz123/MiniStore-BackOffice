@@ -1,5 +1,4 @@
-﻿using App.Windowsapp.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using App.Core.Services;
 using App.Core.Contracts;
+using App.Windowsapp.Views;
 
 namespace App.Windowsapp.Forms
 {
@@ -18,12 +18,12 @@ namespace App.Windowsapp.Forms
     {
         InMemoryProductService _productService = new InMemoryProductService();
         private readonly Dictionary<Type, UserControl> _views = new Dictionary<Type, UserControl>();
-
+        private App.Core.Contracts.IProductServices _service;
         public MainForm()
         {
             InitializeComponent();
             {
-                
+                _service = new App.Core.Services.InMemoryProductService();
             }
 
         }

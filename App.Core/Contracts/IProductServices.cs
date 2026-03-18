@@ -14,8 +14,9 @@ namespace App.Core.Contracts
     {
         public void Add(Product product)
         {
-
+            return;
         }
+        
 
         public bool Update(Product product)
         {
@@ -27,7 +28,10 @@ namespace App.Core.Contracts
             return true;
         }
 
-        public Product GetById(String id);
+        public Product GetById(String id)
+        {
+            return null;
+        }
        
         
         
