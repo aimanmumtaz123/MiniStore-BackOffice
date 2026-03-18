@@ -92,7 +92,7 @@ namespace App.Windowsapp.Forms
             lblCategory.Location = new Point(3, 50);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(154, 50);
-            lblCategory.TabIndex = 1;
+            lblCategory.TabIndex = 7;
             lblCategory.Text = "Category";
             // 
             // lblPrice
@@ -105,7 +105,7 @@ namespace App.Windowsapp.Forms
             lblPrice.Location = new Point(3, 100);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(154, 50);
-            lblPrice.TabIndex = 2;
+            lblPrice.TabIndex = 8;
             lblPrice.Text = "Price";
             // 
             // lblStock
@@ -118,7 +118,7 @@ namespace App.Windowsapp.Forms
             lblStock.Location = new Point(3, 150);
             lblStock.Name = "lblStock";
             lblStock.Size = new Size(154, 50);
-            lblStock.TabIndex = 3;
+            lblStock.TabIndex = 9;
             lblStock.Text = "Stock";
             // 
             // lblStatus
@@ -131,7 +131,7 @@ namespace App.Windowsapp.Forms
             lblStatus.Location = new Point(3, 200);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(154, 50);
-            lblStatus.TabIndex = 4;
+            lblStatus.TabIndex = 10;
             lblStatus.Text = "Status";
             lblStatus.Click += lblStatus_Click;
             // 
@@ -141,7 +141,7 @@ namespace App.Windowsapp.Forms
             txtName.Location = new Point(163, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(634, 23);
-            txtName.TabIndex = 6;
+            txtName.TabIndex = 0;
             // 
             // cBCategory
             // 
@@ -150,7 +150,7 @@ namespace App.Windowsapp.Forms
             cBCategory.Location = new Point(163, 53);
             cBCategory.Name = "cBCategory";
             cBCategory.Size = new Size(634, 23);
-            cBCategory.TabIndex = 7;
+            cBCategory.TabIndex = 1;
             // 
             // nuPrice
             // 
@@ -158,7 +158,7 @@ namespace App.Windowsapp.Forms
             nuPrice.Location = new Point(163, 103);
             nuPrice.Name = "nuPrice";
             nuPrice.Size = new Size(634, 23);
-            nuPrice.TabIndex = 8;
+            nuPrice.TabIndex = 2;
             // 
             // nuStock
             // 
@@ -166,7 +166,7 @@ namespace App.Windowsapp.Forms
             nuStock.Location = new Point(163, 153);
             nuStock.Name = "nuStock";
             nuStock.Size = new Size(634, 23);
-            nuStock.TabIndex = 9;
+            nuStock.TabIndex = 3;
             // 
             // cBStatus
             // 
@@ -175,7 +175,7 @@ namespace App.Windowsapp.Forms
             cBStatus.Location = new Point(163, 203);
             cBStatus.Name = "cBStatus";
             cBStatus.Size = new Size(634, 23);
-            cBStatus.TabIndex = 10;
+            cBStatus.TabIndex = 4;
             // 
             // txtId
             // 
@@ -184,7 +184,7 @@ namespace App.Windowsapp.Forms
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(634, 23);
-            txtId.TabIndex = 11;
+            txtId.TabIndex = 5;
             // 
             // lblID
             // 
@@ -196,7 +196,7 @@ namespace App.Windowsapp.Forms
             lblID.Location = new Point(3, 250);
             lblID.Name = "lblID";
             lblID.Size = new Size(154, 53);
-            lblID.TabIndex = 5;
+            lblID.TabIndex = 11;
             lblID.Text = "ID";
             // 
             // lblName
@@ -209,7 +209,7 @@ namespace App.Windowsapp.Forms
             lblName.Location = new Point(3, 0);
             lblName.Name = "lblName";
             lblName.Size = new Size(154, 50);
-            lblName.TabIndex = 0;
+            lblName.TabIndex = 6;
             lblName.Text = "Name";
             // 
             // flpProductForm
