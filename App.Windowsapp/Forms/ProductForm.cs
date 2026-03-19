@@ -20,7 +20,7 @@ namespace App.Windowsapp.Forms
         ProductFormModeEnum _mode;
         Product _product;
         IProductServices _service;
-        public ProductForm(ProductFormModeEnum mode, Product? p , IProductServices service)
+        public ProductForm(ProductFormModeEnum mode, Product? p, IProductServices service)
         {
             InitializeComponent();
 
@@ -79,24 +79,24 @@ namespace App.Windowsapp.Forms
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e )
-        { 
-            if(_mode == ProductFormModeEnum.Add)
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_mode == ProductFormModeEnum.Add)
             {
                 Product newProduct = new Product();
                 newProduct.Name = txtName.Text;
                 newProduct.Category = (ProductCategoryEnum)cBCategory.SelectedItem;
                 newProduct.Status = (ProductStatusEnum)cBStatus.SelectedItem;
                 newProduct.Price = nuPrice.Value;
-                newProduct.Stock = (int) nuStock.Value;
+                newProduct.Stock = (int)nuStock.Value;
 
                 //_product = _service.Add(newProduct);
                 //txtId.Text = _product.Id;
 
-                //Product temp = _service.Add(newProduct);
-                //txtId.Text = temp?.Id ?? "";
+                Product temp = _service.Add(newProduct);
+                txtId.Text = temp?.Id ?? "";
             }
-            else if(_mode == ProductFormModeEnum.Edit)
+            else if (_mode == ProductFormModeEnum.Edit)
             {
                 _product.Name = txtName.Text;
                 _product.Category = (ProductCategoryEnum)cBCategory.SelectedItem;
@@ -106,6 +106,19 @@ namespace App.Windowsapp.Forms
 
                 bool isUpdate = _service.Update(_product);
             }
+
+
+            this.Close();
+        }
+
+        private void ProductForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -47,7 +47,9 @@ namespace App.Core.Services
         }
         public bool Delete(String id)
         {
-            return false;
+            Product prodToBeDeleted = GetById(id);
+            _products.Remove(prodToBeDeleted);
+            return true;
         }
         public Product GetById(String id)
         {
@@ -61,8 +63,14 @@ namespace App.Core.Services
         }
         public List<Product> Search(string text, ProductCategoryEnum? category, ProductStatusEnum? status)
         {
-            throw new NotImplementedException();
+            List<Product> _filtered = _products.ToList();
+            _filtered = _filtered.Where(p => p.Name.Contains(text)).ToList();
 
+            if(category is not null)
+            {
+                _filtered = _filtered.Where(p => p.Category == category).ToList();
+            }
+            return _filtered;
         }
         public bool Exists(string id)
         {

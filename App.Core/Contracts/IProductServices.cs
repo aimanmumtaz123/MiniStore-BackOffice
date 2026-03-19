@@ -12,9 +12,9 @@ namespace App.Core.Contracts
 {
     public interface IProductServices
     {
-        public void Add(Product product)
+        public Product Add(Product product)
         {
-            return;
+            return product ;
         }
         
 

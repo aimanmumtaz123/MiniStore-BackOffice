@@ -298,6 +298,7 @@
             tbSearch.Name = "tbSearch";
             tbSearch.Size = new Size(228, 23);
             tbSearch.TabIndex = 3;
+            tbSearch.TextChanged += tbSearch_TextChanged;
             // 
             // cbCategory
             // 
@@ -308,6 +309,7 @@
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(169, 23);
             cbCategory.TabIndex = 4;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
             // 
             // cbStockStatus
             // 
@@ -318,6 +320,7 @@
             cbStockStatus.Name = "cbStockStatus";
             cbStockStatus.Size = new Size(171, 23);
             cbStockStatus.TabIndex = 5;
+            cbStockStatus.SelectedIndexChanged += cbStockStatus_SelectedIndexChanged;
             // 
             // ProductsView
             // 

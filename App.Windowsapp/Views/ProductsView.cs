@@ -33,13 +33,15 @@ namespace App.Windowsapp.Views
         private void ProductsView_Load_1(object sender, EventArgs e)
         {
             cbCategory.Items.Clear();
-            cbCategory.Items.Add("--All--");
-            cbCategory.Items.AddRange(Enum.GetNames(typeof(ProductCategoryEnum)));
+            var categories = new List<object> { "--All--"};
+            categories.AddRange(Enum.GetValues(typeof(ProductCategoryEnum)).Cast<object>());
+            cbCategory.DataSource = categories;
             cbCategory.SelectedIndex = 0;
 
             cbStockStatus.Items.Clear();
-            cbStockStatus.Items.Add("--All--");
-            cbStockStatus.Items.AddRange(Enum.GetNames(typeof(ProductStatusEnum)));
+            var stockStatus = new List<object> { "--All--" };
+            stockStatus.AddRange(Enum.GetValues(typeof(ProductStatusEnum)).Cast<object>());
+            cbStockStatus.DataSource = stockStatus;
             cbStockStatus.SelectedIndex = 0;
 
             if (_service == null)
@@ -47,7 +49,7 @@ namespace App.Windowsapp.Views
                 return;
             }
 
-            _service.GetAll();
+            //_service.GetAll();
             _dgvBindingSource.DataSource = _service.GetAll();
         }
 
@@ -57,7 +59,9 @@ namespace App.Windowsapp.Views
 
             ProductForm prodForm = new ProductForm(ProductFormModeEnum.Add, null, _service);
             prodForm.ShowDialog();
-           
+            RefreshGrid();
+
+
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
@@ -65,8 +69,9 @@ namespace App.Windowsapp.Views
             Product? selectedProduct = _dgvBindingSource.Current as Product;
             if (selectedProduct != null)
             {
-                ProductForm prodForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct , _service);
+                ProductForm prodForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct, _service);
                 prodForm.ShowDialog();
+                RefreshGrid();
             }
         }
 
@@ -75,11 +80,59 @@ namespace App.Windowsapp.Views
             Product? selectedProduct = _dgvBindingSource.Current as Product;
             if (selectedProduct != null)
             {
-                ProductForm prodForm = new ProductForm(ProductFormModeEnum.View, selectedProduct , _service);
+                ProductForm prodForm = new ProductForm(ProductFormModeEnum.View, selectedProduct, _service);
                 prodForm.ShowDialog();
             }
         }
+        private void RefreshGrid()
+        {
+            //_dgvBindingSource.DataSource = _service.GetAll();
 
-       
+            string searchText = tbSearch.Text;
+
+            ProductCategoryEnum? selectedCategory = null;
+            if(cbCategory.SelectedItem != null)
+            {
+                if (cbCategory.SelectedItem.ToString().Equals("--All--"))
+                {
+                    selectedCategory = null;
+                }
+                else
+                {
+                    selectedCategory = (ProductCategoryEnum?) cbCategory.SelectedItem;
+                }
+            }
+
+            ProductStatusEnum? selectedStatus = null;
+            if (cbStockStatus.SelectedItem != null)
+            {
+                if (cbStockStatus.SelectedItem.ToString().Equals("--All--"))
+                {
+                    selectedCategory = null;
+                }
+                else
+                {
+                    selectedStatus = (ProductStatusEnum?) cbStockStatus.SelectedItem;
+                }
+            }
+
+
+            _dgvBindingSource.DataSource = _service.Search(searchText, selectedCategory, selectedStatus);
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void cbStockStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
     }
 }

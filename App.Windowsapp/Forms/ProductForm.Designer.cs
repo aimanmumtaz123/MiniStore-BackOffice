@@ -182,7 +182,6 @@ namespace App.Windowsapp.Forms
             txtId.Dock = DockStyle.Fill;
             txtId.Location = new Point(163, 253);
             txtId.Name = "txtId";
-            txtId.ReadOnly = true;
             txtId.Size = new Size(634, 23);
             txtId.TabIndex = 5;
             // 
@@ -236,6 +235,7 @@ namespace App.Windowsapp.Forms
             btnCancel.TextAlign = ContentAlignment.MiddleLeft;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -261,6 +261,7 @@ namespace App.Windowsapp.Forms
             Name = "ProductForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ProductForm";
+            FormClosed += ProductForm_FormClosed;
             tlpProductForm.ResumeLayout(false);
             tlpProductForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nuPrice).EndInit();
@@ -294,6 +295,6 @@ namespace App.Windowsapp.Forms
         private NumericUpDown nuPrice;
         private NumericUpDown nuStock;
         private TextBox txtName;
-        public TextBox txtId;
+        private TextBox txtId;
     }
 }
