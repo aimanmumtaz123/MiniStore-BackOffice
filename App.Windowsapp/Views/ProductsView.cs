@@ -33,7 +33,7 @@ namespace App.Windowsapp.Views
         private void ProductsView_Load_1(object sender, EventArgs e)
         {
             cbCategory.Items.Clear();
-            var categories = new List<object> { "--All--"};
+            var categories = new List<object> { "--All--" };
             categories.AddRange(Enum.GetValues(typeof(ProductCategoryEnum)).Cast<object>());
             cbCategory.DataSource = categories;
             cbCategory.SelectedIndex = 0;
@@ -84,6 +84,15 @@ namespace App.Windowsapp.Views
                 prodForm.ShowDialog();
             }
         }
+
+        private void tsbRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+
+
+        
         private void RefreshGrid()
         {
             //_dgvBindingSource.DataSource = _service.GetAll();
@@ -91,7 +100,7 @@ namespace App.Windowsapp.Views
             string searchText = tbSearch.Text;
 
             ProductCategoryEnum? selectedCategory = null;
-            if(cbCategory.SelectedItem != null)
+            if (cbCategory.SelectedItem != null)
             {
                 if (cbCategory.SelectedItem.ToString().Equals("--All--"))
                 {
@@ -99,7 +108,7 @@ namespace App.Windowsapp.Views
                 }
                 else
                 {
-                    selectedCategory = (ProductCategoryEnum?) cbCategory.SelectedItem;
+                    selectedCategory = (ProductCategoryEnum?)cbCategory.SelectedItem;
                 }
             }
 
@@ -112,7 +121,7 @@ namespace App.Windowsapp.Views
                 }
                 else
                 {
-                    selectedStatus = (ProductStatusEnum?) cbStockStatus.SelectedItem;
+                    selectedStatus = (ProductStatusEnum?)cbStockStatus.SelectedItem;
                 }
             }
 
@@ -133,6 +142,40 @@ namespace App.Windowsapp.Views
         private void cbStockStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshGrid();
+        }
+        //Delete btn :
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            Product? selectedProduct = _dgvBindingSource.Current as Product;
+
+            if (selectedProduct == null)
+            {
+                MessageBox.Show("Please select a product.");
+                return;
+            }
+
+            var confirm = MessageBox.Show(
+                "Are you sure you want to delete?",
+                "Confirm",
+                MessageBoxButtons.YesNo
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                bool isDeleted = _service.Delete(selectedProduct.Id); // check Id/P_Id
+
+                if (isDeleted)
+                {
+                    MessageBox.Show("Deleted Successfully");
+
+                    _dgvBindingSource.DataSource = null;
+                    _dgvBindingSource.DataSource = _service.GetAll();
+                }
+                else
+                {
+                    MessageBox.Show("Delete failed!");
+                }
+            }
         }
     }
 }

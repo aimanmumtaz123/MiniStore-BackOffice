@@ -132,6 +132,7 @@
             tsbDelete.Name = "tsbDelete";
             tsbDelete.Size = new Size(60, 22);
             tsbDelete.Text = "Delete";
+            tsbDelete.Click += tsbDelete_Click;
             // 
             // toolStripSeparator1
             // 
@@ -145,6 +146,7 @@
             tsbRefresh.Name = "tsbRefresh";
             tsbRefresh.Size = new Size(66, 22);
             tsbRefresh.Text = "Refresh";
+            tsbRefresh.Click += tsbRefresh_Click;
             // 
             // pnlGrid
             // 

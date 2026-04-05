@@ -117,28 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCustomer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAqlJREFUSEu1
-        VU2IUlEUVsd/gyE1xUBEFJJCWkh/VIwVSRsLCiuiyJYxs4gKgqEwCNq0CNpJUEEQtIkW/S0KtxVtIoio
-        YGCCIZpFm2aimer1ncecx+ftPTRohA/0nO/n3HvfffosyxpZTgwVkE6n14TD4QPBYPA0cBbfDyaTyXVu
-        XBOeAc1mMw6z8z6fbxqwPDATCAQuNhqNhJuHwDUgHo/XIJ4yzD6FQqFjmL5l1AXTsVhsk5vXXwEw2AfB
-        DxIvYiUXZEXSx8SXqcdYgHa/6dcXgMk3gDhPorloNLqLORKEabci9Bz6n4kr+I7eRuY7AZ1OJwzCexbI
-        wTLZRLlcXuX3+x+wBvgoXspxArC/E0zEVlzR3iCAe4e18BrXnhOASV4Rab5SqaS0Nwj1en0FNLOqh9dz
-        7dkBhUIhp00BJrqphGEBzSX2KJVKGanbATjIMW5iiSdUiAu1FhO9lqdLa8ViMYvaS+bBYzt74PcOqdsB
-        cpjcxJOwWYUwOSU1THhLa+AfkRpCHmstl8sV2EPD7YBIJLKHm/xoDgh4qjVZKXtA15a6HZBIJNYbzeMq
-        lEcO5t1UKlXRmgC1q1jpFv2NIfeyB4asS90OWLoDX7WJyR6qcFgg8LbqgTl9P9kBS4QbRPjJ5zAIsjpo
-        FlUPr7vacwKy2WwRTX4HzeTz+dXa90K1Wl0J7lvSyfZs074TIMD75QwTgSmcT5U5jEwmU8J2vmENpr/O
-        nL6AWq02CtIXFghg8gxPzlFMtlOA74dQe4Leb4P3qN1uR9nTOWR85C58YMG/AOb3W61WjM2dALnWWNo1
-        EBdM4RB4h8f6ZLfbDZnmgr4tktev/OdimhcQ/jKMGN/AuYdVH+71ekH2MNEXwJA3JPZ7TC4dQidlSlym
-        3XKwXtO6wTPg/8Aa+QOdxkksuUOa8gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tsCommands.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>38</value>
+  <metadata name="tsCommands.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

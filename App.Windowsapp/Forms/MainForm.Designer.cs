@@ -27,6 +27,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         pnlHeader = new Panel();
         flpRight = new FlowLayoutPanel();
         pbUser = new PictureBox();
@@ -35,10 +36,11 @@
         pbLogo = new PictureBox();
         pnlSideBar = new Panel();
         pnlContent = new Panel();
+        btnOrders = new Button();
         flpNav = new FlowLayoutPanel();
         btnDashBoard = new Button();
         btnProducts = new Button();
-        btnOrders = new Button();
+        btnCustomer = new Button();
         btnReports = new Button();
         btnSync = new Button();
         btnLogs = new Button();
@@ -46,12 +48,14 @@
         statusStrip = new StatusStrip();
         tsLabelStatus = new ToolStripStatusLabel();
         toolStripStatusLabel1 = new ToolStripStatusLabel();
+        btnOrder = new Button();
         pnlHeader.SuspendLayout();
         flpRight.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pbUser).BeginInit();
         flpLeft.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
         pnlSideBar.SuspendLayout();
+        pnlContent.SuspendLayout();
         flpNav.SuspendLayout();
         statusStrip.SuspendLayout();
         SuspendLayout();
@@ -132,17 +136,35 @@
         // 
         // pnlContent
         // 
+        pnlContent.Controls.Add(btnOrders);
         pnlContent.Dock = DockStyle.Fill;
         pnlContent.Location = new Point(233, 0);
         pnlContent.Name = "pnlContent";
         pnlContent.Size = new Size(579, 485);
         pnlContent.TabIndex = 1;
         // 
+        // btnOrders
+        // 
+        btnOrders.FlatAppearance.BorderSize = 0;
+        btnOrders.FlatStyle = FlatStyle.Flat;
+        btnOrders.Image = Properties.Resources.ico_orders;
+        btnOrders.ImageAlign = ContentAlignment.MiddleLeft;
+        btnOrders.Location = new Point(-230, 151);
+        btnOrders.Name = "btnOrders";
+        btnOrders.Padding = new Padding(10, 0, 0, 0);
+        btnOrders.Size = new Size(230, 40);
+        btnOrders.TabIndex = 2;
+        btnOrders.Text = "Orders";
+        btnOrders.TextAlign = ContentAlignment.MiddleLeft;
+        btnOrders.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnOrders.UseVisualStyleBackColor = true;
+        // 
         // flpNav
         // 
         flpNav.Controls.Add(btnDashBoard);
         flpNav.Controls.Add(btnProducts);
-        flpNav.Controls.Add(btnOrders);
+        flpNav.Controls.Add(btnCustomer);
+        flpNav.Controls.Add(btnOrder);
         flpNav.Controls.Add(btnReports);
         flpNav.Controls.Add(btnSync);
         flpNav.Controls.Add(btnLogs);
@@ -164,7 +186,7 @@
         btnDashBoard.Location = new Point(3, 3);
         btnDashBoard.Name = "btnDashBoard";
         btnDashBoard.Padding = new Padding(10, 0, 0, 0);
-        btnDashBoard.Size = new Size(200, 40);
+        btnDashBoard.Size = new Size(230, 40);
         btnDashBoard.TabIndex = 1;
         btnDashBoard.Text = "DashBoard";
         btnDashBoard.TextAlign = ContentAlignment.MiddleLeft;
@@ -181,7 +203,7 @@
         btnProducts.Location = new Point(3, 49);
         btnProducts.Name = "btnProducts";
         btnProducts.Padding = new Padding(10, 0, 0, 0);
-        btnProducts.Size = new Size(200, 40);
+        btnProducts.Size = new Size(230, 40);
         btnProducts.TabIndex = 1;
         btnProducts.Text = "Products";
         btnProducts.TextAlign = ContentAlignment.MiddleLeft;
@@ -189,21 +211,21 @@
         btnProducts.UseVisualStyleBackColor = true;
         btnProducts.Click += btnProducts_Click;
         // 
-        // btnOrders
+        // btnCustomer
         // 
-        btnOrders.FlatAppearance.BorderSize = 0;
-        btnOrders.FlatStyle = FlatStyle.Flat;
-        btnOrders.Image = Properties.Resources.ico_orders;
-        btnOrders.ImageAlign = ContentAlignment.MiddleLeft;
-        btnOrders.Location = new Point(3, 95);
-        btnOrders.Name = "btnOrders";
-        btnOrders.Padding = new Padding(10, 0, 0, 0);
-        btnOrders.Size = new Size(200, 40);
-        btnOrders.TabIndex = 2;
-        btnOrders.Text = "Orders";
-        btnOrders.TextAlign = ContentAlignment.MiddleLeft;
-        btnOrders.TextImageRelation = TextImageRelation.ImageBeforeText;
-        btnOrders.UseVisualStyleBackColor = true;
+        btnCustomer.FlatAppearance.BorderSize = 0;
+        btnCustomer.FlatStyle = FlatStyle.Flat;
+        btnCustomer.Image = (Image)resources.GetObject("btnCustomer.Image");
+        btnCustomer.ImageAlign = ContentAlignment.MiddleLeft;
+        btnCustomer.Location = new Point(3, 95);
+        btnCustomer.Name = "btnCustomer";
+        btnCustomer.Padding = new Padding(10, 0, 0, 0);
+        btnCustomer.Size = new Size(230, 50);
+        btnCustomer.TabIndex = 7;
+        btnCustomer.Text = "Customers";
+        btnCustomer.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnCustomer.UseVisualStyleBackColor = true;
+        btnCustomer.Click += btnCustomer_Click;
         // 
         // btnReports
         // 
@@ -211,10 +233,10 @@
         btnReports.FlatStyle = FlatStyle.Flat;
         btnReports.Image = Properties.Resources.ico_report;
         btnReports.ImageAlign = ContentAlignment.MiddleLeft;
-        btnReports.Location = new Point(3, 141);
+        btnReports.Location = new Point(3, 207);
         btnReports.Name = "btnReports";
         btnReports.Padding = new Padding(10, 0, 0, 0);
-        btnReports.Size = new Size(200, 40);
+        btnReports.Size = new Size(230, 40);
         btnReports.TabIndex = 3;
         btnReports.Text = "Reports";
         btnReports.TextAlign = ContentAlignment.MiddleLeft;
@@ -227,10 +249,10 @@
         btnSync.FlatStyle = FlatStyle.Flat;
         btnSync.Image = Properties.Resources.ico_sync;
         btnSync.ImageAlign = ContentAlignment.MiddleLeft;
-        btnSync.Location = new Point(3, 187);
+        btnSync.Location = new Point(3, 253);
         btnSync.Name = "btnSync";
         btnSync.Padding = new Padding(10, 0, 0, 0);
-        btnSync.Size = new Size(200, 40);
+        btnSync.Size = new Size(230, 40);
         btnSync.TabIndex = 4;
         btnSync.Text = "Sync";
         btnSync.TextAlign = ContentAlignment.MiddleLeft;
@@ -243,10 +265,10 @@
         btnLogs.FlatStyle = FlatStyle.Flat;
         btnLogs.Image = Properties.Resources.ico_logs;
         btnLogs.ImageAlign = ContentAlignment.MiddleLeft;
-        btnLogs.Location = new Point(3, 233);
+        btnLogs.Location = new Point(3, 299);
         btnLogs.Name = "btnLogs";
         btnLogs.Padding = new Padding(10, 0, 0, 0);
-        btnLogs.Size = new Size(200, 40);
+        btnLogs.Size = new Size(230, 40);
         btnLogs.TabIndex = 5;
         btnLogs.Text = "Logs";
         btnLogs.TextAlign = ContentAlignment.MiddleLeft;
@@ -259,10 +281,10 @@
         btnSettings.FlatStyle = FlatStyle.Flat;
         btnSettings.Image = Properties.Resources.ico_settings;
         btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-        btnSettings.Location = new Point(3, 279);
+        btnSettings.Location = new Point(3, 345);
         btnSettings.Name = "btnSettings";
         btnSettings.Padding = new Padding(10, 0, 0, 0);
-        btnSettings.Size = new Size(200, 40);
+        btnSettings.Size = new Size(230, 40);
         btnSettings.TabIndex = 6;
         btnSettings.Text = "Settings";
         btnSettings.TextAlign = ContentAlignment.MiddleLeft;
@@ -291,6 +313,21 @@
         toolStripStatusLabel1.Size = new Size(23, 23);
         toolStripStatusLabel1.Text = "toolStripStatusLabel1";
         // 
+        // btnOrder
+        // 
+        btnOrder.FlatAppearance.BorderSize = 0;
+        btnOrder.FlatStyle = FlatStyle.Flat;
+        btnOrder.Image = Properties.Resources.ico_orders;
+        btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
+        btnOrder.Location = new Point(3, 151);
+        btnOrder.Name = "btnOrder";
+        btnOrder.Padding = new Padding(10, 0, 0, 0);
+        btnOrder.Size = new Size(230, 50);
+        btnOrder.TabIndex = 8;
+        btnOrder.Text = "Orders";
+        btnOrder.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnOrder.UseVisualStyleBackColor = true;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -312,6 +349,7 @@
         flpLeft.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
         pnlSideBar.ResumeLayout(false);
+        pnlContent.ResumeLayout(false);
         flpNav.ResumeLayout(false);
         statusStrip.ResumeLayout(false);
         statusStrip.PerformLayout();
@@ -341,4 +379,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tsLabelStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     private Panel pnlContent;
+    private Button btnCustomer;
+    private Button btnOrder;
 }
